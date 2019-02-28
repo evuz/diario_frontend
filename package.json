@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
     "format": "prettier --write 'src/**/*.js' 'src/**/*.jsx'"
   },
   "dependencies": {
@@ -15,6 +16,8 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "eslint": "5.3.0",
@@ -31,6 +34,9 @@
     "presets": [
       "env",
       "react"
+    ],
+    "plugins": [
+      "transform-class-properties"
     ]
   }
 }
