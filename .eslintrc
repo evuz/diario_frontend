@@ -2,7 +2,6 @@
   "extends": ["airbnb", "prettier", "prettier/react"],
   "parser": "babel-eslint",
   "rules": {
-    "react/prop-types": false,
     "lines-between-class-members": "off",
     "class-methods-use-this": "off"
   }
