@@ -1,6 +1,8 @@
 import React from 'react';
 
-import Header from './components/Header/Header';
+import Header from './components/Header';
+import Button from './components/Button';
+import domain from './domain';
 
 import './app.scss';
 
@@ -9,7 +11,20 @@ const App = () => {
     <div className="app">
       <Header />
       <main>
-        <h1>Welcome to my Blog</h1>
+        <Button
+          size="medium"
+          stl="outlined"
+          onClick={() =>
+            domain
+              .get({ useCase: 'get_issues' })
+              .execute()
+              .then(res => {
+                console.log(res);
+              })
+          }
+        >
+          Get Issues
+        </Button>
       </main>
     </div>
   );
