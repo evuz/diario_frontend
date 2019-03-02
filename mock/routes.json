@@ -1,0 +1,6 @@
+{
+  "/repos/:owner/:repo/issues": "/issues",
+  "/repos/:owner/:repo/issues?*": "/issues",
+  "/repos/:owner/:repo/issues/:number/comments": "/comments",
+  "/repos/:owner/:repo/issues/:number/comments?*": "/comments"
+}

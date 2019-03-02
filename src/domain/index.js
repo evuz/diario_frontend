@@ -2,7 +2,7 @@ import { Domain } from 'ts-domain';
 import IssueUseCaseFactory from './Issue/UseCases/factory';
 
 const config = {
-  repoUrl: 'parcel-bundler/parcel',
+  repoUrl: process.env.REPO_URL,
   perPage: 2,
   state: 'open',
 };
