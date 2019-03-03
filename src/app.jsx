@@ -19,9 +19,25 @@ const App = () => {
             <li key={issue.id}>{issue.title}</li>
           ))}
         </ul>
-        <Button size="medium" stl="outlined" onClick={() => getIssues()}>
-          Get Issues
-        </Button>
+        <div className="app__buttons">
+          <Button size="medium" onClick={() => getIssues()}>
+            Get Issues
+          </Button>
+          <Button size="medium" stl="outlined" onClick={() => getIssues()}>
+            Get Issues
+          </Button>
+          <Button color="info" size="medium" onClick={() => getIssues()}>
+            Get Issues
+          </Button>
+          <Button
+            color="info"
+            size="medium"
+            stl="outlined"
+            onClick={() => getIssues()}
+          >
+            Get Issues
+          </Button>
+        </div>
       </main>
     </div>
   );
