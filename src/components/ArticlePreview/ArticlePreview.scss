@@ -1,0 +1,31 @@
+.article-preview {
+  font-size: 1rem;
+  &__title {
+    font-size: 1.4em;
+    font-weight: 600;
+    font-style: italic;
+
+    &:hover {
+      opacity: .8;
+      text-decoration: underline;
+    }
+  }
+
+  &__subheader {
+    opacity: .8;
+    font-size: .8em;
+    display: flex;
+    margin-top: .3em;
+  }
+
+  &__user {
+    &:hover {
+      opacity: .6;
+      text-decoration: underline;
+    }
+  }
+
+  &__date {
+    margin-left: .6em;
+  }
+}

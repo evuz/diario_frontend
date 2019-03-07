@@ -4,17 +4,14 @@ import Button from '../../components/Button';
 import useDomain from '../../hooks/useDomain';
 
 import './ArticleList.scss';
+import { ArticlePreviewList } from '../../components/ArticlePreview';
 
 function ArticleList() {
   const [issues, getIssues] = useDomain('get_issues', [], true);
-
+  console.log(issues);
   return (
     <main className="article-list">
-      <ul>
-        {issues.map(issue => (
-          <li key={issue.id}>{issue.title}</li>
-        ))}
-      </ul>
+      <ArticlePreviewList articles={issues} />
       <div className="article-list__buttons">
         <Button size="medium" onClick={() => getIssues()}>
           Get Issues
