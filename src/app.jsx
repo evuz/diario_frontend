@@ -5,13 +5,13 @@ import Router from './router';
 
 import './app.scss';
 
-const App = () => {
+function App() {
   return (
     <div className="app">
       <Header />
       <Router />
     </div>
   );
-};
+}
 
 export default App;

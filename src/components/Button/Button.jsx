@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './Button.scss';
 
-const Button = ({ children, onClick, size, color, stl, disabled, loading }) => {
+function Button({ children, onClick, size, color, stl, disabled, loading }) {
   const btnStyle = stl && `is-${stl}`;
   const btnSize = size && `is-${size}`;
   const btnColor = color && `is-${color}`;
@@ -21,7 +21,7 @@ const Button = ({ children, onClick, size, color, stl, disabled, loading }) => {
       {children}
     </button>
   );
-};
+}
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
