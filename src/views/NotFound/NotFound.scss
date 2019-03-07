@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.page-not-found {
+  font-size: 1rem;
+  height: 90vh;
+  padding: $gap;
+
+  &__message {
+    display: flex;
+    align-items: center;
+  }
+
+  &__code {
+    margin-right: $gap / 2;
+    font-weight: bold;
+    font-size: 10em;
+  }
+
+  &__info {
+    font-size: 4em;
+    max-width: 5em;
+  }
+}
