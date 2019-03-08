@@ -8,7 +8,7 @@ import { ArticlePreviewList } from '../../components/ArticlePreview';
 
 function ArticleList() {
   const [issues, getIssues] = useDomain('get_issues', [], true);
-  console.log(issues);
+
   return (
     <main className="article-list">
       <ArticlePreviewList articles={issues} />

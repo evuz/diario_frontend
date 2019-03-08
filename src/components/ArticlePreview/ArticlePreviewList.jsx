@@ -9,7 +9,7 @@ function ArticlePreviewList({ articles }) {
   return (
     <ul className="article-preview-list">
       {articles.map(article => (
-        <li className="article-preview-list__item">
+        <li key={article.id} className="article-preview-list__item">
           <ArticlePreview key={article.id} article={article} />
         </li>
       ))}
