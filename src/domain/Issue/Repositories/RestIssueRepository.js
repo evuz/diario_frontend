@@ -30,7 +30,7 @@ class RestIssueRepository {
       id: user.id,
       name: user.login,
       avatarUrl: user.avatar_url,
-      url: user.url,
+      url: user.html_url,
     });
     return new Issue({
       id: issue.id,
