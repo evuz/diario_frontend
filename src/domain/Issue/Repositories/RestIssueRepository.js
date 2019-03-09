@@ -13,7 +13,13 @@ class RestIssueRepository {
     this.state = config.state;
   }
 
-  getIssueFromRepository({ config = {} }) {
+  getIssueByNumber({ number }) {
+    return this.httpClient
+      .get(`/repos/${this.repoUrl}/issues/${number}`)
+      .then(({ data }) => this.generateIssueEntity(data));
+  }
+
+  getIssuesFromRepository({ config = {} }) {
     const perPage = config.perPage || config.per_page || this.perPage;
     const state = config.state || this.state;
     const queryPerPage = perPage ? `per_page=${perPage}` : '';

@@ -7,7 +7,8 @@ const config = {
   state: 'open',
 };
 const useCases = {
-  get_issues: IssueUseCaseFactory.getIssuesFromRepositoryService({ config }),
+  get_issues: IssueUseCaseFactory.getIssuesFromRepositoryUseCase({ config }),
+  get_issue: IssueUseCaseFactory.getIssueByNumberUseCase({ config }),
 };
 
 export default new Domain({ useCases, config });

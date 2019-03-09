@@ -1,5 +1,9 @@
 class IssueRepository {
-  getIssueFromRepository() {
+  getIssuesFromRepository() {
+    throw Error('Method not implement yet');
+  }
+
+  getIssueByNumber() {
     throw Error('Method not implement yet');
   }
 }

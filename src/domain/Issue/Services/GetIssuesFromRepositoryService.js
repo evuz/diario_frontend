@@ -4,7 +4,7 @@ class GetIssuesFromRepositoryService {
   }
 
   execute({ config }) {
-    return this.repository.getIssueFromRepository({ config }).then(res => res.map(issue => issue.flat()));
+    return this.repository.getIssuesFromRepository({ config }).then(res => res.map(issue => issue.flat()));
   }
 }
 
