@@ -2,11 +2,12 @@
 const faker = require('faker');
 
 function createIssue() {
+  const id = faker.random.number();
   return {
+    id,
     url: faker.internet.url(),
     repository_url: faker.internet.url(),
-    id: faker.random.number(),
-    number: faker.random.number(),
+    number: id,
     title: faker.lorem.sentence(),
     user: {
       login: faker.internet.userName(),
