@@ -8,7 +8,7 @@ function Header() {
   return (
     <header className="header">
       <img src={logo} className="header__logo" alt="logo" />
-      <h1 className="header__text">Yet another Front-End Blog</h1>
+      <h1 className="header__text">Diario de un Front-End</h1>
     </header>
   );
 }
