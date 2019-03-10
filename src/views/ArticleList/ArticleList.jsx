@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Button from '../../components/Button';
 import Container from '../../components/Container';
@@ -8,7 +8,11 @@ import './ArticleList.scss';
 import { ArticlePreviewList } from '../../components/ArticlePreview';
 
 function ArticleList() {
-  const [issues, getIssues] = useDomain('get_issues', [], true);
+  const [{ data: issues }, getIssues] = useDomain('get_issues', [], true);
+
+  useEffect(() => {
+    getIssues();
+  }, []);
 
   return (
     <main className="article-list">
