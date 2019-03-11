@@ -1,22 +1,7 @@
 @import '../../styles/variables';
 
 .container {
-  max-width: $widescreen - $gap;
+  max-width: 1000px;
+  padding: 0 $gap / 2;
   margin: 0 auto;
-
-  @media (max-width: $widescreen) {
-    max-width: $desktop - $gap;
-  }
-
-  @media (max-width: $desktop) {
-    max-width: $tablet + 2 * $gap;
-  }
-
-  @media (max-width: $desktop - (($desktop - $tablet) / 2)) {
-    max-width: $tablet - $gap;
-  }
-
-  @media (max-width: $tablet) {
-    margin: 0 1em;
-  }
 }
