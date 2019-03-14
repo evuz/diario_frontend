@@ -2,9 +2,15 @@
 
 .article-list {
   font-size: 1rem;
+  margin-left: 4em;
 
   ul {
     font-size: 1.4em;
+  }
+
+  &__container {
+    padding: 2.5em 0;
+    display: flex;
   }
 
   &__buttons {
