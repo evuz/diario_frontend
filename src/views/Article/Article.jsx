@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import format from 'date-fns/format';
 
-import './Article.scss';
 import useDomain from '../../hooks/useDomain';
 import Container from '../../components/Container';
+import Markdown from '../../components/Markdown';
+
+import './Article.scss';
 
 function Article({ match }) {
   const [{ data: article, loading }, getIssue] = useDomain('get_issue', null);
@@ -12,8 +14,6 @@ function Article({ match }) {
   useEffect(() => {
     getIssue({ number: match.params.number });
   }, []);
-
-  console.log(article);
 
   if (!article || loading) return null;
 
@@ -30,6 +30,9 @@ function Article({ match }) {
               {format(article.updatedAt, 'MM/DD/YYYY HH:mm')}
             </div>
           </div>
+        </div>
+        <div className="article__body">
+          <Markdown>{article.body}</Markdown>
         </div>
       </Container>
     </main>

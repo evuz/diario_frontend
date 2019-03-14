@@ -1,3 +1,31 @@
 .article {
   font-size: 1rem;
+
+  &__header {
+    margin-bottom: 1em;
+  }
+
+  &__title {
+    font-size: 2em;
+    font-weight: 600;
+  }
+
+  &__subheader {
+    opacity: .8;
+    font-size: .8em;
+    font-weight: 300;
+    display: flex;
+    margin-top: .3em;
+  }
+
+  &__author {
+    &:hover {
+      opacity: .6;
+      text-decoration: underline;
+    }
+  }
+
+  &__date {
+    margin-left: .6em;
+  }
 }
