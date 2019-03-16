@@ -2,8 +2,16 @@
 
 .menu-info {
   font-size: 1rem;
-  display: flex;
   max-width: none;
+
+  &__top-content {
+    display: flex;
+  }
+
+  &__social-media {
+    display: flex;
+    justify-content: flex-end;
+  }
 
   &__avatar {
     width: 6em;
@@ -14,6 +22,7 @@
 
   &__right-content {
     margin-left: 2em;
+    text-align: right;
   }
 
   &__name {
@@ -31,11 +40,20 @@
 
 @media screen and (min-width: $tablet) {
   .menu-info {
-    display: block;
     max-width: 18em;
+
+    &__top-content {
+      display: block;
+    }
+
+    &__social-media {
+      margin-top: .5em;
+      justify-content: flex-start;
+    }
 
     &__right-content {
       margin-left: 0;
+      text-align: left;
     }
 
     &__avatar {
