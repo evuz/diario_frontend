@@ -28,6 +28,7 @@
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
+    "@svgr/parcel-plugin-svgr": "^4.1.0",
     "babel-eslint": "^10.0.1",
     "concurrently": "^4.1.0",
     "cross-env": "^5.2.0",
