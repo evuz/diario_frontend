@@ -1,22 +1,18 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './MenuInfo.scss';
 
-function MenuInfo({ name, photo, summary, links }) {
+function MenuInfo({ name, photo, summary }) {
   return (
     <nav className="menu-info">
-      <img className="menu-info__avatar" src={photo} alt={name} />
-      <h5 className="menu-info__name">{name}</h5>
-      <p className="menu-info__summary">{summary}</p>
-      <ul>
-        {links.map(link => (
-          <li>
-            <Link to={link.ref}>{link.label}</Link>
-          </li>
-        ))}
-      </ul>
+      <div>
+        <img className="menu-info__avatar" src={photo} alt={name} />
+      </div>
+      <div className="menu-info__right-content">
+        <h5 className="menu-info__name">{name}</h5>
+        <p className="menu-info__summary">{summary}</p>
+      </div>
     </nav>
   );
 }

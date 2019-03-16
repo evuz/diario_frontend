@@ -2,25 +2,44 @@
 
 .article-list {
   font-size: 1rem;
-  margin-left: 4em;
+  padding: 1em 0;
 
   ul {
     font-size: 1.4em;
   }
 
-  &__container {
-    padding: 2.5em 0;
-    display: flex;
+  &__nav {
+    padding-bottom: 1em;
+    border-bottom: 1px solid $border;
   }
 
-  &__buttons {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  &__container {
+    margin-top: 1em;
+  }
+}
 
-    & > * {
-      &:not(:first-child) {
-        margin-left: $gap;
+@media screen and (min-width: $tablet) {
+  .article-list {
+    display: flex;
+    padding: 2.5em 0;
+
+    &__container {
+      margin-top: 0;
+      margin-left: 4em;
+    }
+
+    &__nav {
+      border-bottom: none;
+      margin-right: 1em;
+      position: relative;
+      &:after {
+        position: absolute;
+        content: '';
+        top: -2.5em;
+        right: -1em;
+        width: 1px;
+        height: 25em;
+        background: linear-gradient(180deg, $background 0, $border 20%, $border 60%, $background);
       }
     }
   }

@@ -1,23 +1,46 @@
+@import '../../styles/variables';
+
 .menu-info {
   font-size: 1rem;
-  max-width: 18em;
-  margin-right: 1em;
+  display: flex;
+  max-width: none;
 
   &__avatar {
-    width: 8em;
-    height: 8em;
+    width: 6em;
+    height: 6em;
+    margin: auto;
     border-radius: 500px;
   }
 
-  .menu-info__name {
-    font-weight: 500;
-    font-size: 1.4em;
-    margin: .5em 0;
+  &__right-content {
+    margin-left: 2em;
   }
 
-  .menu-info__summary {
+  &__name {
+    font-weight: 500;
+    font-size: 1.4em;
+    margin: 0.5em 0;
+  }
+
+  &__summary {
     line-height: 1.3em;
-    font-size: .9em;
-    opacity: .8;
+    font-size: 0.9em;
+    opacity: 0.8;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .menu-info {
+    display: block;
+    max-width: 18em;
+
+    &__right-content {
+      margin-left: 0;
+    }
+
+    &__avatar {
+      width: 8em;
+      height: 8em;
+    }
   }
 }

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 
-import Button from '../../components/Button';
 import Container from '../../components/Container';
 import useDomain from '../../hooks/useDomain';
 import PersonalInfo from '../../containers/PersonalInfo';
@@ -17,20 +16,12 @@ function ArticleList() {
 
   return (
     <Container>
-      <div className="article-list__container">
-        <PersonalInfo />
-        <main className="article-list">
+      <div className="article-list">
+        <div className="article-list__nav">
+          <PersonalInfo />
+        </div>
+        <main className="article-list__container">
           <ArticlePreviewList articles={issues} />
-          <div className="article-list__buttons">
-            <Button
-              color="info"
-              size="medium"
-              stl="outlined"
-              onClick={() => getIssues()}
-            >
-              Get Issues
-            </Button>
-          </div>
         </main>
       </div>
     </Container>
