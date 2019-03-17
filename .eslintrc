@@ -5,6 +5,13 @@
   "rules": {
     "lines-between-class-members": "off",
     "class-methods-use-this": "off",
-    "react-hooks/rules-of-hooks": "error"
+    "react-hooks/rules-of-hooks": "error",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "asserts": "either"
+      }
+    ],
+    "jsx-a11y/label-has-for": "off"
   }
 }
