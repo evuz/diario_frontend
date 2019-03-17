@@ -3,7 +3,16 @@ import PropTypes from 'prop-types';
 
 import './Button.scss';
 
-function Button({ children, onClick, size, color, stl, disabled, loading }) {
+function Button({
+  children,
+  onClick,
+  size,
+  color,
+  stl,
+  disabled,
+  loading,
+  type,
+}) {
   const btnStyle = stl && `is-${stl}`;
   const btnSize = size && `is-${size}`;
   const btnColor = color && `is-${color}`;
@@ -12,9 +21,10 @@ function Button({ children, onClick, size, color, stl, disabled, loading }) {
     .filter(e => e)
     .join(' ');
   return (
+    // eslint-disable-next-line react/button-has-type
     <button
       onClick={onClick}
-      type="button"
+      type={type}
       className={className}
       disabled={disabled}
     >
@@ -41,6 +51,7 @@ Button.propTypes = {
   stl: PropTypes.oneOf(['', 'outlined', 'inverted', 'outlined', 'rounded']),
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
+  type: PropTypes.oneOf(['button', 'submit']),
 };
 
 Button.defaultProps = {
@@ -50,6 +61,7 @@ Button.defaultProps = {
   stl: '',
   disabled: false,
   loading: false,
+  type: 'button',
 };
 
 export default Button;
