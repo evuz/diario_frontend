@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Container from '../../components/Container';
-import Input from '../../components/Input';
+import { Input, Textarea } from '../../components/Form';
 import Button from '../../components/Button/Button';
 import useInput from '../../hooks/useInput';
 
@@ -35,12 +35,12 @@ function NewArticle() {
             onChange={changeSummary}
             placeholder="Resumen"
           />
-          <Input
+          <Textarea
             name="article"
             label="Artículo"
             value={article}
+            rows={15}
             onChange={changeArticle}
-            type="textarea"
             placeholder="Escribe tu artículo ..."
           />
           <div className="new-article__submit">
