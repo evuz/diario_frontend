@@ -1,14 +1,7 @@
-import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
+
+import { setAdmin } from './auth/setAdmin'
 
 admin.initializeApp();
 
-export const authSetAdmin = functions.auth.user().onCreate(user => {
-  return admin
-    .firestore()
-    .collection('users')
-    .doc(user.email)
-    .set({
-      admin: false,
-    });
-});
+export const authSetAdmin = setAdmin;
