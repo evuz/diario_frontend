@@ -10,7 +10,7 @@ export function isAdmin(req: Request, res: Response, next: NextFunction) {
     res.status(403).send('Unauthorized');
     return;
   }
-  const token = (<string>req.headers.authorization).split('Bearer ')[1];
+  const token = req.headers.authorization.split('Bearer ')[1];
   return admin.auth().verifyIdToken(token)
     .then(user => {
       (<any>req).user = user;
@@ -18,15 +18,15 @@ export function isAdmin(req: Request, res: Response, next: NextFunction) {
     })
     .then(doc => {
       if (!doc.exists) {
-        return res.status(403).send('Unauthorized');
+        res.status(403).send('Unauthorized');
+        return;
       }
-
       const data = doc.data();
       if (!data || !data.admin) {
-        return res.status(403).send('Unauthorized');
+        res.status(403).send('Unauthorized');
+        return;
       }
-
-      return next();
+      next();
     })
     .catch(() => {
       res.status(403).send('Unauthorized');
