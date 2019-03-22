@@ -1,5 +1,5 @@
 import { Domain } from 'ts-domain';
-import IssueUseCaseFactory from './Issue/UseCases/factory';
+import ArticleUseCaseFactory from './Article/UseCases/factory';
 
 const config = {
   repoUrl: process.env.REPO_URL,
@@ -7,8 +7,10 @@ const config = {
   state: 'open',
 };
 const useCases = {
-  get_issues: IssueUseCaseFactory.getIssuesFromRepositoryUseCase({ config }),
-  get_issue: IssueUseCaseFactory.getIssueByNumberUseCase({ config }),
+  get_articles: ArticleUseCaseFactory.getArticlesFromRepositoryUseCase({
+    config,
+  }),
+  get_article: ArticleUseCaseFactory.getArticleByNumberUseCase({ config }),
 };
 
 export default new Domain({ useCases, config });

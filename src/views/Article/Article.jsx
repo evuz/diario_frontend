@@ -9,10 +9,13 @@ import Markdown from '../../components/Markdown';
 import './Article.scss';
 
 function Article({ match }) {
-  const [{ data: article, loading }, getIssue] = useDomain('get_issue', null);
+  const [{ data: article, loading }, getArticle] = useDomain(
+    'get_article',
+    null,
+  );
 
   useEffect(() => {
-    getIssue({ number: match.params.number });
+    getArticle({ number: match.params.number });
   }, []);
 
   if (!article || loading) return null;

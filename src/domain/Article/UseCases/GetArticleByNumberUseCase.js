@@ -1,4 +1,4 @@
-class GetIssuesByNumberUseCase {
+class GetArticlesByNumberUseCase {
   constructor({ service }) {
     this.service = service;
   }
@@ -8,4 +8,4 @@ class GetIssuesByNumberUseCase {
   }
 }
 
-export default GetIssuesByNumberUseCase;
+export default GetArticlesByNumberUseCase;

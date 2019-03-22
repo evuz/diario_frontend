@@ -8,12 +8,11 @@ import { ArticlePreviewList } from '../../components/ArticlePreview';
 import './ArticleList.scss';
 
 function ArticleList() {
-  const [{ data: issues }, getIssues] = useDomain('get_issues', [], true);
+  const [{ data: articles }, getArticles] = useDomain('get_articles', [], true);
 
   useEffect(() => {
-    getIssues();
+    getArticles();
   }, []);
-
   return (
     <Container>
       <div className="article-list">
@@ -21,7 +20,7 @@ function ArticleList() {
           <PersonalInfo />
         </div>
         <main className="article-list__container">
-          <ArticlePreviewList articles={issues} />
+          <ArticlePreviewList articles={articles} />
         </main>
       </div>
     </Container>

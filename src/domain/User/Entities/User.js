@@ -1,12 +1,12 @@
 import { Entity } from 'ts-domain';
 
 class User extends Entity {
-   /**
-   * @param {Object} Issue
-   * @param {Number} Issue.id
-   * @param {String} Issue.name
-   * @param {String} Issue.avatarUrl
-   * @param {String} Issue.url
+  /**
+   * @param {Object} User
+   * @param {Number} User.id
+   * @param {String} User.name
+   * @param {String} User.avatarUrl
+   * @param {String} User.url
    */
 }
 
