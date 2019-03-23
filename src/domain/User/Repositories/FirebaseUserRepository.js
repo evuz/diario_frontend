@@ -17,6 +17,11 @@ class FirebaseUserRepository extends UserRepository {
         throw Error(err);
       });
   }
+
+  getToken() {
+    const { firebase } = this.config;
+    return firebase.auth().currentUser.getIdToken();
+  }
 }
 
 export default FirebaseUserRepository;
