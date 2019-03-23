@@ -1,8 +1,9 @@
 import Article from '../Entities/Article';
 
 class CreateArticleService {
-  constructor({ repository }) {
+  constructor({ repository, getTokenService }) {
     this.repository = repository;
+    this.getTokenService = getTokenService;
   }
 
   execute({ article }) {
@@ -11,7 +12,9 @@ class CreateArticleService {
       summary: article.summary,
       title: article.title,
     });
-    return this.repository.createArticle({ article: articleModel });
+    return this.getTokenService.execute().then(token => {
+      return this.repository.createArticle({ article: articleModel, token });
+    });
   }
 }
 

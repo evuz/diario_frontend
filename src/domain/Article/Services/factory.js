@@ -4,6 +4,7 @@ import ArticleRepositoryFactory from '../Repositories/factory';
 import GetArticlesFromRepositoryService from './GetArticlesFromRepositoryService';
 import CreateArticleService from './CreateArticleService';
 import GetArticleByNumberService from './GetArticleByNumberService';
+import UserServiceFactory from '../../User/Services/factory';
 
 class ArticleServicesFactory {
   static getArticlesFromRepositoryService = ({ config }) =>
@@ -36,6 +37,7 @@ class ArticleServicesFactory {
         repository: ArticleRepositoryFactory.firebaseArticleRepository({
           config,
         }),
+        getTokenService: UserServiceFactory.getTokenService({ config }),
       },
     );
 }

@@ -9,11 +9,12 @@ class FirebaseArticleRepository extends ArticleRepository {
     this.config = config;
   }
 
-  createArticle({ article: articleInstance }) {
+  createArticle({ article: articleInstance, token }) {
     const { http } = this.config;
-    console.log(this.config);
     const article = articleInstance.flat();
-    return http.post(URL, article);
+    return http.post(URL, article, {
+      headers: { authorization: `Bearer ${token}` },
+    });
   }
 }
 
