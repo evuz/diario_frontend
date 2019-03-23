@@ -2,6 +2,7 @@ import { Singleton } from 'ts-domain';
 
 import ArticleRepositoryFactory from '../Repositories/factory';
 import GetArticlesFromRepositoryService from './GetArticlesFromRepositoryService';
+import CreateArticleService from './CreateArticleService';
 import GetArticleByNumberService from './GetArticleByNumberService';
 
 class ArticleServicesFactory {
@@ -23,6 +24,18 @@ class ArticleServicesFactory {
       },
       {
         repository: ArticleRepositoryFactory.restArticleRepository({ config }),
+      },
+    );
+  static createArticleService = ({ config }) =>
+    Singleton(
+      {
+        singleton: CreateArticleService,
+        type: 'CreateArticleService',
+      },
+      {
+        repository: ArticleRepositoryFactory.firebaseArticleRepository({
+          config,
+        }),
       },
     );
 }

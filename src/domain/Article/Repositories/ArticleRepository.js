@@ -1,10 +1,16 @@
 class ArticleRepository {
   getArticlesFromRepository() {
-    throw Error('Method not implement yet');
+    throw Error(
+      'ArticleRepository#getArticlesFromRepository not implement yet',
+    );
   }
 
   getArticleByNumber() {
-    throw Error('Method not implement yet');
+    throw Error('ArticleRepository#getArticleByNumber not implement yet');
+  }
+
+  createArticle() {
+    throw Error('ArticleRepository#createArticle not implement yet');
   }
 }
 

@@ -1,5 +1,7 @@
 import { Domain } from 'ts-domain';
+
 import ArticleUseCaseFactory from './Article/UseCases/factory';
+import httpClient from './httpClient';
 
 const config = {
   repoUrl: process.env.REPO_URL,
@@ -11,6 +13,10 @@ const useCases = {
     config,
   }),
   get_article: ArticleUseCaseFactory.getArticleByNumberUseCase({ config }),
+  create_article: ArticleUseCaseFactory.createArticleUseCase({ config }),
 };
 
-export default new Domain({ useCases, config });
+const domain = new Domain({ useCases, config });
+domain.setConfig({ key: 'http', config: httpClient });
+
+export default domain;

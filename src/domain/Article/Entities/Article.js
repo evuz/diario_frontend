@@ -4,22 +4,13 @@ class Article extends Entity {
   /**
    * @param {Object} Article
    * @param {Number} Article.id
-   * @param {Number} Article.number
    * @param {String} Article.title
+   * @param {String} Article.summary
    * @param {String} Article.body
-   * @param {User} Article.user
+   * @param {String} Article.readTime
    * @param {Date} Article.createdAt
    * @param {Date} Article.updatedAt
    */
-
-  flat() {
-    const user = this.user.flat();
-    const me = super.flat();
-    return {
-      ...me,
-      user,
-    };
-  }
 }
 
 export default Article;
