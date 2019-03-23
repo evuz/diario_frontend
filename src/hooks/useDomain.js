@@ -11,11 +11,12 @@ function useDomain(useCase, initVal = null) {
 
   function execute(...args) {
     setResponse({ data: response.data, error: null, loading: true });
-    domain
+    return domain
       .get({ useCase })
       .execute(...args)
       .then(results => {
         setResponse({ data: results, error: null, loading: false });
+        return results;
       })
       .catch(error => {
         setResponse({ error, data: initVal, loading: false });
