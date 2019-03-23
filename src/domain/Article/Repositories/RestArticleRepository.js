@@ -1,20 +1,32 @@
+import ArticleRepository from './ArticleRepository';
 import Article from '../Entities/Article';
 import User from '../../User/Entities/User';
 
-class RestArticleRepository {
-  constructor({ httpClient, config }) {
-    this.repoUrl = config.repo_url || config.repoUrl;
-    if (!this.repoUrl) {
+class RestArticleRepository extends ArticleRepository {
+  get perPage() {
+    return this.config.per_page || this.config.perPage;
+  }
+
+  get repoUrl() {
+    const value = this.config.repo_url || this.config.repoUrl;
+    if (!value) {
       throw Error('You must set a repoUrl in your config');
     }
+    return value;
+  }
 
-    this.httpClient = httpClient;
-    this.perPage = config.per_page || config.perPage;
-    this.state = config.state;
+  get state() {
+    return this.config.state;
+  }
+
+  constructor({ config }) {
+    super();
+    this.config = config;
   }
 
   getArticleByNumber({ number }) {
-    return this.httpClient
+    const { http } = this.config;
+    return http
       .get(`/repos/${this.repoUrl}/issues/${number}`)
       .then(({ data }) => this.generateArticleEntity(data));
   }
@@ -25,7 +37,8 @@ class RestArticleRepository {
     const queryPerPage = perPage ? `per_page=${perPage}` : '';
     const queryState = state ? `state=${state}` : '';
     const queryParams = [queryPerPage, queryState].filter(e => e).join('&');
-    return this.httpClient
+    const { http } = this.config;
+    return http
       .get(`/repos/${this.repoUrl}/issues?${queryParams}`)
       .then(({ data }) => {
         return data.map(this.generateArticleEntity);
