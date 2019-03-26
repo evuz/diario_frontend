@@ -12,8 +12,11 @@ class CreateArticleService {
       summary: article.summary,
       title: article.title,
     });
-    return this.getTokenService.execute().then(token => {
-      return this.repository.createArticle({ article: articleModel, token });
+    return this.getTokenService.execute().then(({ firebase }) => {
+      return this.repository.createArticle({
+        article: articleModel,
+        token: firebase,
+      });
     });
   }
 }

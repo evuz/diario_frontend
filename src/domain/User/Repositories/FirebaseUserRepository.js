@@ -12,7 +12,12 @@ class FirebaseUserRepository extends UserRepository {
     provider.addScope('repo');
     return firebase
       .auth()
-      .signInWithPopup(provider)
+      .setPersistence(firebase.auth.Auth.Persistence.NONE)
+      .then(() => firebase.auth().signInWithPopup(provider))
+      .then(user => {
+        this.githubAccessToken = user.credential.accessToken;
+        return user;
+      })
       .catch(err => {
         throw Error(err);
       });
@@ -20,7 +25,15 @@ class FirebaseUserRepository extends UserRepository {
 
   getToken() {
     const { firebase } = this.config;
-    return firebase.auth().currentUser.getIdToken();
+    return firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then(firebaseAccessToken => {
+        return {
+          firebase: firebaseAccessToken,
+          github: this.githubAccessToken,
+        };
+      });
   }
 }
 
