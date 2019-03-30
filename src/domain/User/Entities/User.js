@@ -5,8 +5,7 @@ class User extends Entity {
    * @param {Object} User
    * @param {Number} User.id
    * @param {String} User.name
-   * @param {String} User.avatarUrl
-   * @param {String} User.url
+   * @param {String} User.photoUrl
    */
 }
 
