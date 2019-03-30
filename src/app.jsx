@@ -1,13 +1,14 @@
 import React from 'react';
 
 import Router from './router';
-
-import './app.scss';
+import Store from './context/Store';
 
 function App() {
   return (
     <div className="app">
-      <Router />
+      <Store>
+        <Router />
+      </Store>
     </div>
   );
 }
