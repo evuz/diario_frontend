@@ -7,7 +7,7 @@ const icons = {
   github: GithubIcon,
   linkedin: LinkedinIcon,
   twitter: TwitterIcon,
-  default: DefaultIcon
+  default: DefaultIcon,
 };
 
 export default icons;

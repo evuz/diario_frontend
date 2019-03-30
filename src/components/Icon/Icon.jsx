@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 
 import icons from './icons';
 
-function Icon({ icon, size }) {
+import './Icon.scss';
+
+function Icon({ icon, size, color }) {
   const style = {
     width: `${size}px`,
     height: `${size}px`,
+    fill: color,
   };
   const IconComponent = icons[icon] || icons.default;
   return (
@@ -20,11 +23,13 @@ function Icon({ icon, size }) {
 
 Icon.propTypes = {
   size: PropTypes.number,
-  icon: PropTypes.string.isRequired
+  icon: PropTypes.string.isRequired,
+  color: PropTypes.string,
 };
 
 Icon.defaultProps = {
   size: 24,
+  color: 'black',
 };
 
 export default Icon;
