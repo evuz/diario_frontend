@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+
+$size: 4.5em;
+
+.logout-btn {
+  position: relative;
+  width: $size;
+  height: $size;
+  perspective: 1000px;
+
+  &__flipper {
+    transition: transform .8s;
+    transform-style: preserve-3d;
+  }
+
+  &:hover &__flipper {
+    transform: rotateY(180deg);
+  }
+
+  &__avatar {
+    backface-visibility: hidden;
+    opacity: .8;
+    width: $size;
+    height: $size;
+    border-radius: 500px;
+  }
+
+  &__icon {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 500px;
+    background-color: lighten($primary, 5);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
