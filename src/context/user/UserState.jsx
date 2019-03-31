@@ -8,7 +8,6 @@ function UserState({ children }) {
   const [userState, dispatch] = useReducer(userReducer, null);
 
   const login = user => {
-    console.log(user);
     dispatch({ user, type: LOGIN });
   };
 
