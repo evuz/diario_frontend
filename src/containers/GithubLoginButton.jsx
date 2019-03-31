@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import Button from '../components/Button';
-import Icon from '../components/Icon';
+import GithubLoginButton from '../components/GithubLoginButton';
+import UserContext from '../context/user/UserContext';
+import useDomain from '../hooks/useDomain';
 
-function GithubLoginButton() {
-  return (
-    <Button color="dark">
-      <span>Sign In with</span>
-      <Icon icon="github" size={16} color="white" />
-    </Button>
-  );
+function GithubLoginButtonContainer() {
+  const { login } = useContext(UserContext);
+  const [{ loading }, githubSignIn] = useDomain('login');
+
+  function signIn() {
+    githubSignIn().then(u => {
+      login(u);
+    });
+  }
+
+  return <GithubLoginButton loading={loading} onClick={signIn} />;
 }
 
-export default GithubLoginButton;
+export default GithubLoginButtonContainer;
