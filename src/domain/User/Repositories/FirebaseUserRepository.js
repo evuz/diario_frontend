@@ -24,6 +24,11 @@ class FirebaseUserRepository extends UserRepository {
       });
   }
 
+  logout() {
+    const { firebase } = this.config;
+    return firebase.auth().signOut();
+  }
+
   getToken() {
     const { firebase } = this.config;
     return firebase

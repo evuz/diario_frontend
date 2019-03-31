@@ -3,6 +3,7 @@ import { Singleton } from 'ts-domain';
 import UserRepositoryFactory from '../Repositories/factory';
 import GithubLoginUserService from './GithubLoginUserService';
 import GetTokenService from './GetTokenService';
+import LogoutService from './LogoutService';
 
 class UserServiceFactory {
   static githubLoginUserService = ({ config }) =>
@@ -14,6 +15,12 @@ class UserServiceFactory {
   static getTokenService = ({ config }) =>
     Singleton(
       { singleton: GetTokenService, type: 'GetTokenService' },
+      { repository: UserRepositoryFactory.firebaseUserRepository({ config }) },
+    );
+
+  static logoutService = ({ config }) =>
+    Singleton(
+      { singleton: LogoutService, type: 'LogoutService' },
       { repository: UserRepositoryFactory.firebaseUserRepository({ config }) },
     );
 }

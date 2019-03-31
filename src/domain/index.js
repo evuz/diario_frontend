@@ -22,7 +22,8 @@ const useCases = {
   }),
   get_article: ArticleUseCaseFactory.getArticleByNumberUseCase({ config }),
   create_article: ArticleUseCaseFactory.createArticleUseCase({ config }),
-  login: UserUseCaseFactory.githubLoginUserService({ config }),
+  login: UserUseCaseFactory.githubLoginUserUseCase({ config }),
+  logout: UserUseCaseFactory.logoutUseCase({ config }),
 };
 
 if (!firebase.apps.length) {
