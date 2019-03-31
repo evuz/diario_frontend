@@ -2,10 +2,15 @@
 
 .article-list {
   font-size: 1rem;
-  padding: 1em 0;
+  padding-top: 1em 0;
+  min-height: 100vh;
 
   ul {
     font-size: 1.4em;
+  }
+
+  &__btn-login {
+    display: none;
   }
 
   &__nav {
@@ -20,8 +25,9 @@
 
 @media screen and (min-width: $tablet) {
   .article-list {
+    $padding-container: 2.5em;
     display: flex;
-    padding: 2.5em 0;
+    padding-top: $padding-container;
 
     &__container {
       margin-top: 0;
@@ -32,6 +38,12 @@
       border-bottom: none;
       margin-right: 1em;
       position: relative;
+      position: sticky;
+      top: $padding-container;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-height: calc(100vh - #{$padding-container});
       &:after {
         position: absolute;
         content: '';
@@ -41,6 +53,10 @@
         height: 25em;
         background: linear-gradient(180deg, $background 0, $border 20%, $border 60%, $background);
       }
+    }
+
+    &__btn-login {
+      display: block;
     }
   }
 }
