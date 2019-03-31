@@ -48,7 +48,7 @@ Button.propTypes = {
     'warning',
     'danger',
   ]),
-  stl: PropTypes.oneOf(['', 'outlined', 'inverted', 'outlined', 'rounded']),
+  stl: PropTypes.oneOf(['', 'outlined', 'inverted', 'rounded']),
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
   type: PropTypes.oneOf(['button', 'submit']),
