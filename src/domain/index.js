@@ -17,7 +17,7 @@ const firebaseConfig = {
 };
 
 const useCases = {
-  get_articles: ArticleUseCaseFactory.getArticlesFromRepositoryUseCase({
+  get_articles: ArticleUseCaseFactory.getArticlesUseCase({
     config,
   }),
   get_article: ArticleUseCaseFactory.getArticleByNumberUseCase({ config }),

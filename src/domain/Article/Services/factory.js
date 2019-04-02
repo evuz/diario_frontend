@@ -1,17 +1,17 @@
 import { Singleton } from 'ts-domain';
 
 import ArticleRepositoryFactory from '../Repositories/factory';
-import GetArticlesFromRepositoryService from './GetArticlesFromRepositoryService';
+import GetArticlesService from './GetArticlesService';
 import CreateArticleService from './CreateArticleService';
 import GetArticleByNumberService from './GetArticleByNumberService';
 import UserServiceFactory from '../../User/Services/factory';
 
 class ArticleServicesFactory {
-  static getArticlesFromRepositoryService = ({ config }) =>
+  static getArticlesService = ({ config }) =>
     Singleton(
       {
-        singleton: GetArticlesFromRepositoryService,
-        type: 'GetArticlesFromRepositoryService',
+        singleton: GetArticlesService,
+        type: 'GetArticlesService',
       },
       {
         repository: ArticleRepositoryFactory.restArticleRepository({ config }),

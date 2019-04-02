@@ -1,4 +1,4 @@
-class GetArticlesFromRepositoryUseCase {
+class GetArticlesUseCase {
   constructor({ service }) {
     this.service = service;
   }
@@ -8,4 +8,4 @@ class GetArticlesFromRepositoryUseCase {
   }
 }
 
-export default GetArticlesFromRepositoryUseCase;
+export default GetArticlesUseCase;

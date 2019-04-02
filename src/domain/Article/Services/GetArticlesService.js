@@ -1,13 +1,13 @@
-class GetArticlesFromRepositoryService {
+class GetArticlesService {
   constructor({ repository }) {
     this.repository = repository;
   }
 
   execute({ config }) {
     return this.repository
-      .getArticlesFromRepository({ config })
+      .getArticles({ config })
       .then(res => res.map(article => article.flat()));
   }
 }
 
-export default GetArticlesFromRepositoryService;
+export default GetArticlesService;

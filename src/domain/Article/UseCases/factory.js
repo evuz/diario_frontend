@@ -1,12 +1,12 @@
-import GetArticlesFromRepositoryUseCase from './GetArticlesFromRepositoryUseCase';
+import GetArticlesUseCase from './GetArticlesUseCase';
 import CreateArticleUseCase from './CreateArticleUseCase';
 import GetArticleByNumberUseCase from './GetArticleByNumberUseCase';
 import ArticleServicesFactory from '../Services/factory';
 
 class ArticleUseCaseFactory {
-  static getArticlesFromRepositoryUseCase = ({ config }) =>
-    new GetArticlesFromRepositoryUseCase({
-      service: ArticleServicesFactory.getArticlesFromRepositoryService({
+  static getArticlesUseCase = ({ config }) =>
+    new GetArticlesUseCase({
+      service: ArticleServicesFactory.getArticlesService({
         config,
       }),
     });

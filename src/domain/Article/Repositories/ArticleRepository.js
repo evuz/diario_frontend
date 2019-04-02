@@ -1,5 +1,5 @@
 class ArticleRepository {
-  getArticlesFromRepository() {
+  getArticles() {
     throw Error(
       'ArticleRepository#getArticlesFromRepository not implement yet',
     );

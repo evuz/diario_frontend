@@ -31,7 +31,7 @@ class RestArticleRepository extends ArticleRepository {
       .then(({ data }) => this.generateArticleEntity(data));
   }
 
-  getArticlesFromRepository({ config = {} }) {
+  getArticles({ config = {} }) {
     const perPage = config.perPage || config.per_page || this.perPage;
     const state = config.state || this.state;
     const queryPerPage = perPage ? `per_page=${perPage}` : '';
