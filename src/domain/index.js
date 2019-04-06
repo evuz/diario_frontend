@@ -1,6 +1,7 @@
 import { Domain } from 'ts-domain';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/firestore';
 
 import ArticleUseCaseFactory from './Article/UseCases/factory';
 import UserUseCaseFactory from './User/UseCases/factory';

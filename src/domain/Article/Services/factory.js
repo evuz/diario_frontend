@@ -14,7 +14,9 @@ class ArticleServicesFactory {
         type: 'GetArticlesService',
       },
       {
-        repository: ArticleRepositoryFactory.restArticleRepository({ config }),
+        repository: ArticleRepositoryFactory.firebaseArticleRepository({
+          config,
+        }),
       },
     );
   static getArticleByNumberService = ({ config }) =>
