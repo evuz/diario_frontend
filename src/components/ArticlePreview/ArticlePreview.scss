@@ -19,13 +19,10 @@
   }
 
   &__user {
+    margin-right: .6em;
     &:hover {
       opacity: .6;
       text-decoration: underline;
     }
-  }
-
-  &__date {
-    margin-left: .6em;
   }
 }

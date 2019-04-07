@@ -20,18 +20,13 @@ function ArticlePreviewList({ articles }) {
 ArticlePreviewList.propTypes = {
   articles: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number,
-      number: PropTypes.number,
+      id: PropTypes.string,
       title: PropTypes.string,
       body: PropTypes.string,
-      user: PropTypes.shape({
-        id: PropTypes.number,
-        name: PropTypes.string,
-        avatarUrl: PropTypes.string,
-        url: PropTypes.string,
-      }),
-      createdAt: PropTypes.string,
-      updatedAt: PropTypes.string,
+      summary: PropTypes.string,
+      readTime: PropTypes.number,
+      createdAt: PropTypes.number,
+      updatedAt: PropTypes.number,
     }),
   ),
 };

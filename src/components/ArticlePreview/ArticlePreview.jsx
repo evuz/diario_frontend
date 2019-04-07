@@ -8,15 +8,12 @@ import './ArticlePreview.scss';
 function ArticlePreview({ article }) {
   return (
     <div className="article-preview">
-      <Link to={`article/${article.number}`} className="article-preview__title">
+      <Link to={`article/${article.id}`} className="article-preview__title">
         {article.title}
       </Link>
       <div className="article-preview__subheader">
-        <a href={article.user.url} className="article-preview__user">
-          @{article.user.name}
-        </a>
         <div className="article-preview__date">
-          {format(article.updatedAt, 'MM/DD/YYYY HH:mm')}
+          {format(article.createdAt, 'MM/DD/YYYY HH:mm')}
         </div>
       </div>
     </div>
@@ -25,18 +22,13 @@ function ArticlePreview({ article }) {
 
 ArticlePreview.propTypes = {
   article: PropTypes.shape({
-    id: PropTypes.number,
-    number: PropTypes.number,
+    id: PropTypes.string,
     title: PropTypes.string,
     body: PropTypes.string,
-    user: PropTypes.shape({
-      id: PropTypes.number,
-      name: PropTypes.string,
-      avatarUrl: PropTypes.string,
-      url: PropTypes.string,
-    }),
-    createdAt: PropTypes.string,
-    updatedAt: PropTypes.string,
+    summary: PropTypes.string,
+    readTime: PropTypes.number,
+    createdAt: PropTypes.number,
+    updatedAt: PropTypes.number,
   }),
 };
 
